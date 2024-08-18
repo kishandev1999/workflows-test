@@ -18,8 +18,4 @@ jobs:
     steps:
       - name: Print environment input
         run: |
-          echo "Environment: ${{ github.event.inputs.environment }}"
-
-      - name: Print version input
-        run: |
-          echo "Version: ${{ github.event.inputs.version }}"
+          echo "hello dev"
