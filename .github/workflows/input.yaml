@@ -1,1 +1,23 @@
+name: Print Workflow Dispatch Inputs
 
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'dev'
+      version:
+        description: 'Version to deploy'
+        required: true
+        default: '1.0.0'
+
+jobs:
+  print-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print environment input
+        run: echo "Environment: ${{ github.event.inputs.environment }}"
+
+      - name: Print version input
+        run: echo "Version: ${{ github.event.inputs.version }}"
